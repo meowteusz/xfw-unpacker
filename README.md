@@ -20,7 +20,10 @@ gh repo clone mattryczek/xfw-unpacker
 git clone https://github.com/mattryczek/xfw-unpacker.git
 
 cp xfw-unpacker/unpacker.py xfw-unpacker/requirements.txt unpacker/
+
+# Activate venv and install dependencies
 cd unpacker
+source bin/activate
 pip3 install -r requirements.txt
 ```
 
@@ -28,6 +31,5 @@ pip3 install -r requirements.txt
 The script will read through all the folders in its containing directory and attempt to rebuild any animations into GIFs. Folders with no XBM frame data will be ignored. Reconstructed GIFs will be placed into the `asset_raws` folder, mirroring their inital structure.
 
 ```bash
-cd unpacker
 python3 unpacker.py
 ```
