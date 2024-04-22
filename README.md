@@ -19,7 +19,7 @@ gh repo clone mattryczek/xfw-unpacker
 
 git clone https://github.com/mattryczek/xfw-unpacker.git
 
-cp xfw-unpacker/unpacker.py xfw-unpacker/requirements.txt xfw-unpacker/
+cp xfw-unpacker/unpacker.py xfw-unpacker/requirements.txt unpacker/
 cd unpacker
 pip3 install -r requirements.txt
 ```
