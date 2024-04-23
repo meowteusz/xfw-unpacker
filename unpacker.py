@@ -158,9 +158,9 @@ def unpack(
                 pass
 
         if (source / "Anims/manifest.txt").exists():
-            (unpacked / "Anims").mkdir(parents=True, exist_ok=True)
+            (unpacked / "Frames").mkdir(parents=True, exist_ok=True)
             shutil.copyfile(
-                source / "Anims/manifest.txt", unpacked / "Anims/manifest.txt"
+                source / "Anims/manifest.txt", unpacked / "Frames/manifest.txt"
             )
             manifest = (source / "Anims/manifest.txt").read_bytes()
 
@@ -176,8 +176,8 @@ def unpack(
                 logger(f"Decompile: anim for pack '{source.name}': {anim}")
                 unpack_anim(
                     source / "Anims" / anim,
-                    unpacked / "Anims" / anim,
-                    unpacked / "gifs",
+                    unpacked / "Frames" / anim,
+                    unpacked / "GIFs",
                 )
 
 
@@ -190,7 +190,7 @@ if __name__ == "__main__":
     here = pathlib.Path(__file__).absolute().parent
     start = time.perf_counter()
 
-    unpack(here, here / "asset_raws", logger=print)
+    unpack(here, here / "Unpacked", logger=print)
 
     end = time.perf_counter()
     print(f"\nFinished in {round(end - start, 2)}s\n")
