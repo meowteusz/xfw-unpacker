@@ -4,7 +4,7 @@ Xtreme Firmware for Flipper Zero comes with the option to install custom asset p
 
 ## Setup
 
-You will only need the `Pillow` and `heatshrink2` libraries. Using a `venv` is highly recommended (in general). 
+You will only need the `Pillow` and `heatshrink2` libraries. Using a `venv` is recommended (in general). 
 
 
 ```bash
@@ -28,8 +28,12 @@ pip3 install -r requirements.txt
 ```
 
 ## Usage
-The script will read through all the folders in its containing directory and attempt to rebuild any animations into GIFs. Folders with no XBM frame data will be ignored. Reconstructed GIFs will be placed into the `asset_raws` folder, mirroring their inital structure.
+The script will read through all the folders in its parent directory and attempt to rebuild any packed animations into GIFs. Reconstructed animations will be placed into the `Unpacked` folder mirroring the inital asset packs' structure. Individual frames will be exported as PNG files, and stored in the `Frames` directory. GIFs will end up in the `GIFs` folder. Folders with no XBM frame data or `manifest.txt` file will be ignored. 
 
 ```bash
+# Assuming you followed the above setup instructions
+
+cd unpacker
+source bin/activate
 python3 unpacker.py
 ```
